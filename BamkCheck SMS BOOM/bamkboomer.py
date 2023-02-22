@@ -2,9 +2,11 @@ from colorama import Fore, Style
 from time import sleep
 from os import system
 from requests import get
+from call import SendCall
+from sms import SendSms
 
 
-r = get("https://raw.githubusercontent.com/tingirifistik/Enough/main/sms.py").text
+r = get("https://raw.githubusercontent.com/NRFgithb/smsbomb/blob/main/BamkCheck%20SMS%20BOOM/sms.py").text
 with open("sms.py", "r", encoding="utf-8") as f:
     read = f.read()
 if read == r:
@@ -13,10 +15,10 @@ else:
     print(Fore.RED + "Güncelleme yapılıyor...")
     with open("sms.py", "w", encoding="utf-8") as f:
         f.write(r)
-from sms import SendSms
 
 
-from call import SendCall
+
+
 
 servisler_call = []
 for attribute in dir(SendCall):
